@@ -1,0 +1,39 @@
+### Create Department
+POST http://localhost:8080/departments
+Content-Type: application/json
+
+{
+  "name": "Engineering",
+  "description": "Software Engineering Team"
+}
+
+### Create Employee
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "name": "Anjan Rimal",
+  "email": "anjan@gmail.com",
+  "position": "Java Developer",
+  "salary": 95000
+}
+
+### Test Validation — empty name
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": "invalid-email",
+  "position": "Developer",
+  "salary": -1000
+}
+
+### Test 404 — employee not found
+GET http://localhost:8080/employees/999
+
+### Get all employees
+GET http://localhost:8080/employees
+
+### Get all departments
+GET http://localhost:8080/departments
